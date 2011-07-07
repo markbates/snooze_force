@@ -20,7 +20,7 @@ Bundler.require
 Gemstub.test_framework = :rspec
 
 Gemstub.gem_spec do |s|
-  # s.version = '0.0.1'
+  s.version = '1.0.0'
   # s.rubyforge_project = 'snooze_force'
   s.add_dependency('httparty')
   s.add_dependency('i18n')

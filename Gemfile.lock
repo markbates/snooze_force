@@ -5,6 +5,7 @@ GEM
     crack (0.1.8)
     diff-lcs (1.1.2)
     erubis (2.7.0)
+    fakeweb (1.3.0)
     gemstub (2.0.4)
       activesupport (>= 3.0.0)
       genosaurus
@@ -33,6 +34,7 @@ PLATFORMS
 
 DEPENDENCIES
   activesupport (>= 3.0.0)
+  fakeweb
   gemstub (>= 2.0.0)
   httparty
   i18n

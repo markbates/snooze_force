@@ -1,0 +1,7 @@
+{
+  "id": "https://login.salesforce.com/id/00D...MAG/005...IAC",
+  "issued_at": "1310057957218",
+  "instance_url": "https://na9.salesforce.com",
+  "signature": "TFt6J1SLOCKD+edKgOeYCN5/mHutyikUGP1HzmAxe20=",
+  "access_token": "abc123"
+}

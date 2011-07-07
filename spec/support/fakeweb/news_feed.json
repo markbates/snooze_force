@@ -1,0 +1,30 @@
+{
+  "objectDescribe" : {
+    "name" : "NewsFeed",
+    "label" : "News Feed",
+    "custom" : false,
+    "keyPrefix" : "0D5",
+    "labelPlural" : "News Feed",
+    "layoutable" : false,
+    "activateable" : false,
+    "updateable" : false,
+    "urls" : {
+      "sobject" : "/services/data/v22.0/sobjects/NewsFeed",
+      "describe" : "/services/data/v22.0/sobjects/NewsFeed/describe",
+      "rowTemplate" : "/services/data/v22.0/sobjects/NewsFeed/{ID}"
+    },
+    "searchable" : false,
+    "createable" : false,
+    "customSetting" : false,
+    "deletable" : false,
+    "deprecatedAndHidden" : false,
+    "feedEnabled" : false,
+    "mergeable" : false,
+    "queryable" : true,
+    "replicateable" : false,
+    "retrieveable" : true,
+    "undeletable" : false,
+    "triggerable" : false
+  },
+  "recentItems" : [ ]
+}

@@ -26,7 +26,6 @@ h3. Access Attributes
   res = client.user.me # same as: 
                        # client.get('sobjects/User/005...IAC')
                        # client.user.get('/005...IAC')
-  puts res.Username # => 'joesmith'
   puts res['Username'] # => 'joesmith'
 </code></pre>
 

@@ -3,9 +3,7 @@ module SnoozeForce
     
     attr_accessor :client
     attr_accessor :options
-    attr_accessor :base
-    attr_accessor :response
-    
+    attr_accessor :base    
     class << self
       attr_accessor :sobject
     end
@@ -19,30 +17,9 @@ module SnoozeForce
     %w{get post put delete head}.each do |verb|
       define_method(verb) do |path = '/', options = {}|
         path = File.join('sobjects', self.base, path)
-        self.response = self.client.send(verb, path, self.options.merge(options))
-        return self
+        self.client.send(verb, path, self.options.merge(options))
       end
     end
-    
-    def [](key)
-      self.response[key]
-    end
-    
-    def method_missing(sym, *args, &block)
-      if self.response 
-        if self.response.has_key?(sym.to_s)
-          return self.response[sym.to_s]
-        elsif self.response.respond_to?(sym)
-          return self.response.send(sym, *args, &block)
-        end
-      end
-      super(sym, *args, &block)
-    end
-    
-    def status
-      self.response.code
-    end
-    alias code status
     
   end
 end
