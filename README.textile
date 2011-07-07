@@ -1,0 +1,74 @@
+h1. SnoozeForce - A Client for Saleforce.com's REST API
+
+h2. Setup
+
+<pre><code>
+  client = SnoozeForce::Client.new(:instance_url => 'https://XXX.salesforce.com', 
+                                   :token => '00D...cg3', 
+                                   :uid => '005...IAC', 
+                                   :refresh_token => "5Ae...JcQ==",
+                                   :client_id => '3MV...zYT',
+                                   :client_secret => '782...385')
+</code></pre>
+
+h2. Use
+
+h3. Direct Access
+
+<pre><code>
+  res = client.get('sobjects/User/005...IAC')
+  puts res.inspect
+</code></pre>
+
+h3. Access Attributes
+
+<pre><code>
+  res = client.user.me # same as: 
+                       # client.get('sobjects/User/005...IAC')
+                       # client.user.get('/005...IAC')
+  puts res.Username # => 'joesmith'
+  puts res['Username'] # => 'joesmith'
+</code></pre>
+
+h3. Object Access
+
+<pre><code>
+  res = client.news_feed.get # same as: 
+                             # client.news_feed.get('/')
+  puts res.inspect
+  
+  res = client.user.me # same as: 
+                       # client.get('sobjects/User/005...IAC')
+                       # client.user.get('/005...IAC')
+  
+  res = client.account.get('/XXXX')
+  # etc....
+</code></pre>
+
+h3. SObject Details
+
+<pre><code>
+  puts client.account.class.sobject.inspect # returns the details of the sobject
+</code></pre>
+
+h3. Query
+
+<pre><code>
+  res = client.query("SELECT Id, Name FROM Account")
+  puts res.inspect
+</code></pre>
+
+h3. Search
+
+<pre><code>
+  res = client.search("FIND+{Oil}")
+  puts res.inspect
+</code></pre>
+
+h3. Post
+
+<pre><code>
+  res = client.account.post('/', {:body => {'Name' => 'Billy Bob'}})
+  puts res.inspect
+</code></pre>
+
