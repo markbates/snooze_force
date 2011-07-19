@@ -19,9 +19,7 @@ module SnoozeForce
       self.client_secret = options[:client_secret]
       self.options = {:headers => {'Content-Type' => 'application/json'}}.merge(options)
       
-      if self.uid && !SnoozeForce.const_defined?("U#{self.uid}")
-        self.rebuild_sobjects!
-      end
+      self.rebuild_sobjects! if self.uid
       
     end
     
