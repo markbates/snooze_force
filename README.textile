@@ -47,7 +47,19 @@ h3. Object Access
 h3. SObject Details
 
 <pre><code>
-  puts client.account.class.sobject.inspect # returns the details of the sobject
+  puts client.account._sobject.inspect # returns the details of the sobject
+</code></pre>
+
+h3. Describe
+
+<pre><code>
+  puts client.account._describe
+</code></pre>
+
+h3. Fields
+
+<pre><code>
+  puts client.account._fields
 </code></pre>
 
 h3. Query

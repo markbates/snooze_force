@@ -2,11 +2,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{snooze_force}
-  s.version = "1.0.0.20110707132152"
+  s.version = "1.1.0.20110719104553"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["markbates"]
-  s.date = %q{2011-07-07}
+  s.date = %q{2011-07-19}
   s.description = %q{snooze_force was developed by: markbates}
   s.email = %q{}
   s.extra_rdoc_files = ["LICENSE"]

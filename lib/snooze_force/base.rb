@@ -3,7 +3,8 @@ module SnoozeForce
     
     attr_accessor :client
     attr_accessor :options
-    attr_accessor :base    
+    attr_accessor :base
+    
     class << self
       attr_accessor :sobject
     end
@@ -19,6 +20,21 @@ module SnoozeForce
         path = File.join('sobjects', self.base, path)
         self.client.send(verb, path, self.options.merge(options))
       end
+    end
+    
+    def _describe
+      unless @_describe
+        @_describe = self.get('describe')
+      end
+      return @_describe
+    end
+    
+    def _fields
+      self._describe['fields']
+    end
+    
+    def _sobject
+      self.class.sobject
     end
     
   end

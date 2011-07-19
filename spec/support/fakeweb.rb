@@ -27,3 +27,5 @@ FakeWeb.register_uri(:post, "https://login.salesforce.com/services/oauth2/token?
 FakeWeb.register_uri(:post, "https://login.salesforce.com/services/oauth2/token?grant_type=refresh_token&client_id=#{sf_client_id}&client_secret=#{sf_client_secret}&refresh_token=", :body => fakeweb_file('no_refresh_token.json'), "content-type"=>["application/json; charset=utf-8"], :status => 400)
 
 FakeWeb.register_uri(:post, "https://login.salesforce.com/services/oauth2/token?grant_type=refresh_token&client_id=#{sf_client_id}&client_secret=#{sf_client_secret}&refresh_token=broken", :body => fakeweb_file('no_refresh_token.json'), "content-type"=>["application/json; charset=utf-8"], :status => 400)
+
+FakeWeb.register_uri(:get, "https://na9.salesforce.com/services/data/v22.0/sobjects/Account/describe", :body => fakeweb_file('account_describe.json'), "content-type"=>["application/json; charset=utf-8"], :status => 200)
